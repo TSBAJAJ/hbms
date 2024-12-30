@@ -13,11 +13,11 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String createdOn;
+    private long createdOn;
 
     private String createdBy;
 
-    private String updatedOn;
+    private long updatedOn;
 
     private String updatedBy;
 }
