@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -36,17 +34,6 @@ public class UserService {
         long currentTimeMillis = System.currentTimeMillis();
 
         User user;
-//        if (optionalUser.isPresent()) {
-//            user = optionalUser.get();
-//            user.setUpdatedOn(currentTimeMillis);
-//        } else {
-//            userDto.setCreatedOn(currentTimeMillis);
-//            userDto.setUpdatedOn(currentTimeMillis);
-//            user = userMapper.toEntity(userDto);
-//            user = userRepository.save(user);
-//        }
-
-
         if (userDto.getId() != null && userDto.getId() > 0) {
             // Update existing user
             user = userRepository.findById(userDto.getId())
